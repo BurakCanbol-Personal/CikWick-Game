@@ -475,8 +475,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 324504095}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22010401, y: 0.002390852, z: -0.00053946744, w: 0.97547334}
-  m_LocalPosition: {x: -0.02, y: 1.87625, z: -9.33}
+  m_LocalRotation: {x: 0.2585593, y: 0.0023503322, z: -0.0006290943, w: 0.96599233}
+  m_LocalPosition: {x: -0.02, y: 1.91625, z: -9.360001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -504,7 +504,7 @@ MonoBehaviour:
       Size: {x: 0.8, y: 0.8}
       Offset: {x: 0, y: 0}
   CenterOnActivate: 1
-  TargetOffset: {x: 0, y: -0.03, z: 0.75}
+  TargetOffset: {x: 0, y: -0.42, z: 0.75}
   Damping: {x: 1, y: 1}
   Lookahead:
     Enabled: 1
@@ -523,8 +523,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 625c14eee3ad46c99df7c7c891ef668a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damping: {x: 0.88, y: 0.75, z: 1.41}
-  ShoulderOffset: {x: -0.02, y: 1.61, z: -0.45}
+  Damping: {x: 0.88, y: 0.72, z: 1.41}
+  ShoulderOffset: {x: -0.02, y: 1.65, z: -0.48}
   VerticalArmLength: 0.3
   CameraSide: 1
   CameraDistance: 2.88
@@ -668,8 +668,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22010401, y: 0.002390852, z: -0.00053946744, w: 0.97547334}
-  m_LocalPosition: {x: -0.02, y: 1.87625, z: -9.33}
+  m_LocalRotation: {x: 0.2585593, y: 0.0023503322, z: -0.0006290943, w: 0.96599233}
+  m_LocalPosition: {x: -0.02, y: 1.91625, z: -9.360001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1564,6 +1564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 884068639}
+  - component: {fileID: 884068640}
   - component: {fileID: 884068638}
   m_Layer: 0
   m_Name: HolyWheat
@@ -1609,6 +1610,21 @@ Transform:
   - {fileID: 2017672356}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &884068640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884068637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac59dfe7110872944b6f84298434b638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerControler: {fileID: 371513174}
+  _forceIncrease: 8
+  _resetBoostDuration: 5
 --- !u!1 &1039747517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1618,6 +1634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1039747519}
+  - component: {fileID: 1039747520}
   - component: {fileID: 1039747518}
   m_Layer: 0
   m_Name: RottenWheat
@@ -1663,6 +1680,21 @@ Transform:
   - {fileID: 261997479}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1039747520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039747517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 452f39657985f044ab54b14deac8e04b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerControler: {fileID: 371513174}
+  _movemenDecreaseSpeed: -25
+  _resetBoostDuration: 5
 --- !u!1 &1099697233
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,6 +2376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2050218716}
+  - component: {fileID: 2050218717}
   - component: {fileID: 2050218715}
   m_Layer: 0
   m_Name: GoldWheat
@@ -2389,6 +2422,21 @@ Transform:
   - {fileID: 4452026643465889605}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2050218717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050218714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2805d5671a890a04daa30d4e2f5c9c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerControler: {fileID: 371513174}
+  _movementIncreaseSpeed: 15
+  _resetBoostDuration: 5
 --- !u!1 &2123682580
 GameObject:
   m_ObjectHideFlags: 0

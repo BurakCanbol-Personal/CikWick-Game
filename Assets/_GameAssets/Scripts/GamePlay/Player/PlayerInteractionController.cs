@@ -6,17 +6,17 @@ public class PlayerInteractionController : MonoBehaviour
     {
         if (other.CompareTag(Consts.WheatTypes.GOLD_WHEAT))
         {
-            Debug.Log("Gold Wheat Collected!");
+            other.gameObject?.GetComponent<GoldWheatCollectible>().Collect();
         }
 
         if (other.CompareTag(Consts.WheatTypes.HOLY_WHEAT))
         {
-            Debug.Log("Holy Wheat Collected!");
+            other.gameObject?.GetComponent<HolyWheatCollectible>().Collect();
         }
 
         if (other.CompareTag(Consts.WheatTypes.ROTTEN_WHEAT))
         {
-            Debug.Log("Rotten Wheat Collected!");
+            other.gameObject?.GetComponent<RottenWheatCollectible>().Collect();
         }
     }
 }
