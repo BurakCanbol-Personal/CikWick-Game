@@ -62,7 +62,7 @@ public class PlayerControler : MonoBehaviour
 
     private void Update()
     {
-        if(GameManager.Instance.GetCurrentGameState() != GameState.Play && GameManager.Instance.GetCurrentGameState() != GameState.Resume) { return; }
+        if (GameManager.Instance.GetCurrentGameState() != GameState.Play && GameManager.Instance.GetCurrentGameState() != GameState.Resume) { return; }
 
         SetInput();
         SetStates();
@@ -72,7 +72,7 @@ public class PlayerControler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(GameManager.Instance.GetCurrentGameState() != GameState.Play && GameManager.Instance.GetCurrentGameState() != GameState.Resume) { return; }
+        if (GameManager.Instance.GetCurrentGameState() != GameState.Play && GameManager.Instance.GetCurrentGameState() != GameState.Resume) { return; }
 
         SetPlayerMovement();
     }
@@ -225,6 +225,22 @@ public class PlayerControler : MonoBehaviour
     public Rigidbody GetPlayerRigidbody()
     {
         return _playerRigidbody;
+    }
+
+    public bool CanCatChase()
+    {
+        if (Physics.Raycast(transform.position, Vector3.down, out RaycastHit hit, _playerHeight * 0.5f + 02f, _groundLayer))
+        {
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer(Consts.Layers.FLOOR_LAYER))
+            {
+                return true;
+            }
+            else if (hit.collider.gameObject.layer == LayerMask.NameToLayer(Consts.Layers.GROUND_LAYER))
+            {
+                return false;
+            }
+        }
+        return false;
     }
 
     #endregion

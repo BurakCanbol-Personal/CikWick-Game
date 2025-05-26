@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3746853145103083823}
   - component: {fileID: 4103196284555008866}
   - component: {fileID: -4118851207104423799}
+  - component: {fileID: 5017558931972084628}
   m_Layer: 6
   m_Name: Dishrack
   m_TagString: Untagged
@@ -131,3 +132,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.6000001, y: 3.2854457, z: 3.6000001}
   m_Center: {x: -0.000011444092, y: 1.6427228, z: 0}
+--- !u!208 &5017558931972084628
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8218980408636588756}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.8000001, y: 1.6430001, z: 1.8000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.6430001, z: 0}
+  m_TimeToStationary: 0.5
