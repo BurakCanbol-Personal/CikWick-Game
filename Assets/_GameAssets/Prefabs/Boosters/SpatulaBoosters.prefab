@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _spatulaAnimator: {fileID: 8298449115736982535}
-  _jumpForce: 25
+  _jumpForce: 45
 --- !u!65 &7809047278758705369
 BoxCollider:
   m_ObjectHideFlags: 0
