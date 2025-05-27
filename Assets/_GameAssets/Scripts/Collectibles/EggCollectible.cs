@@ -5,6 +5,7 @@ public class EggCollectible : MonoBehaviour, ICollectible
     public void Collect()
     {
         GameManager.Instance.OnEggCollected();
-        Destroy(this.gameObject);
+        CameraShake.Instance.ShakeCamera(0.5f, 0.5f);
+        Destroy(gameObject);
     }
 }
