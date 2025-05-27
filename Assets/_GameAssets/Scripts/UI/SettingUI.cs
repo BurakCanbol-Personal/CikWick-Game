@@ -1,4 +1,6 @@
 using DG.Tweening;
+using MaskTransitions;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,7 +35,10 @@ public class SettingUI : MonoBehaviour
         _settingsButtons.onClick.AddListener(OnSettingsButtonClicked);
         _resumeButton.onClick.AddListener(OnResumeButtonClicked);
 
-        
+        _mainMenuButton.onClick.AddListener(() =>
+        {
+            TransitionManager.Instance.LoadLevel(Consts.SceneNames.MENU_SCENE);
+        });
     }
 
     //Can be deleted(only job to add escape key to pause and resume)
