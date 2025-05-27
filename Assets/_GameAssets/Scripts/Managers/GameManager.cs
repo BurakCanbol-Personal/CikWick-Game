@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private EggCounterUI _eggCounterUI;
     [SerializeField] private WinLoseUI _winLoseUI;
+    [SerializeField] private CatController _catController;
+    [SerializeField] private PlayerHealtUI _playerHealthUI;
 
 
 
@@ -33,6 +35,13 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         HealthManager.Instance.OnPlayerDeath += HealthManager_OnPlayerDeath;
+        _catController.OnCatCatched += _catController_OnCatCatched;
+    }
+
+    private void _catController_OnCatCatched()
+    {
+        _playerHealthUI.AnimateDamageForAll();
+        StartCoroutine(OnGameOver());
     }
 
     private void HealthManager_OnPlayerDeath()
