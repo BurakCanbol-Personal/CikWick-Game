@@ -24,6 +24,7 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] private float _airMultiplier;
     [SerializeField] private float _airDrag;
     [SerializeField] private bool _canJump;
+    [SerializeField] private float _slidingCoolDown;
 
 
 
@@ -91,6 +92,7 @@ public class PlayerControler : MonoBehaviour
         else if (Input.GetKeyDown(_movementKey))
         {
             _isSliding = false;
+
         }
         else if (Input.GetKey(_jumpKey) && _canJump && IsGrounded())
         {
@@ -98,9 +100,11 @@ public class PlayerControler : MonoBehaviour
             _canJump = false;
             SetPlayerJumping();
             Invoke(nameof(ResetJumping), _jumpCoolDown);
+            AudioManager.Instance.Play(SoundType.JumpSound);
 
         }
     }
+
 
 
     private void SetStates()
@@ -167,6 +171,11 @@ public class PlayerControler : MonoBehaviour
             Vector3 limitedVelocity = flatVelocity.normalized * _movementSpeed;
             _playerRigidbody.linearVelocity = new Vector3(limitedVelocity.x, _playerRigidbody.linearVelocity.y, limitedVelocity.z);
         }
+    }
+
+    private void CoolDownPlayerSpeed()
+    {
+        _isSliding = false;
     }
 
     private void SetPlayerJumping()

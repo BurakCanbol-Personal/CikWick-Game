@@ -16,6 +16,10 @@ public class WinPopup : MonoBehaviour
 
     private void OnEnable()
     {
+        BackgroundMusic.Instance.PlayBackgroundMusic(false);
+        AudioManager.Instance.Play(SoundType.WinSound);
+
+        
         _timerText.text = _timerUI.GetFinalTime();
 
         _oneMoreButton.onClick.AddListener(OnOneMoreButtonClicked);
@@ -24,11 +28,13 @@ public class WinPopup : MonoBehaviour
 
     private void OnOneMoreButtonClicked()
     {
+        AudioManager.Instance.Play(SoundType.TransitionSound);
         TransitionManager.Instance.LoadLevel(Consts.SceneNames.GAME_SCENE);
     }
 
     private void OnMainMenuButtonClicked()
     {
+        AudioManager.Instance.Play(SoundType.TransitionSound);
         TransitionManager.Instance.LoadLevel(Consts.SceneNames.MENU_SCENE);
     }
 
