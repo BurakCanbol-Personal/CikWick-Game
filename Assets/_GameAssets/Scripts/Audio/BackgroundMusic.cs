@@ -8,14 +8,14 @@ public class BackgroundMusic : MonoBehaviour
 
     private AudioSource _audioSource;
 
-    private void Awake() 
+    private void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
 
-        if(Instance != null)
+        if (Instance != null)
         {
             Destroy(gameObject);
-        } 
+        }
         else
         {
             Instance = this;
@@ -32,5 +32,10 @@ public class BackgroundMusic : MonoBehaviour
     {
         if (isMusicPlaying && !_audioSource.isPlaying) _audioSource.Play();
         else if (!isMusicPlaying) _audioSource.Stop();
+    }
+    
+    public bool IsMusicPlaying()
+    {
+        return _audioSource.isPlaying;
     }
 }

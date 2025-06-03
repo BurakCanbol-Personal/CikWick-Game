@@ -20,13 +20,18 @@ public class MenuControllerUI : MonoBehaviour
             AudioManager.Instance.Play(SoundType.TransitionSound);
             TransitionManager.Instance.LoadLevel(Consts.SceneNames.GAME_SCENE);
         });
-        
+
         _quitButton.onClick.AddListener(() =>
         {
             AudioManager.Instance.Play(SoundType.ButtonClickSound);
             Debug.Log("Quit the game!");
             Application.Quit();
         });
+
+        if (!BackgroundMusic.Instance.IsMusicPlaying())
+        {
+            BackgroundMusic.Instance.PlayBackgroundMusic(true);
+        }
     }
 
 }
